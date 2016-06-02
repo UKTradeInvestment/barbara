@@ -60,3 +60,7 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+ω-reference
+.idea/
+db.sqlite3

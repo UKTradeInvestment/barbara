@@ -1,0 +1,212 @@
+Return-Path: <recipient-list-bounces@anotherdomain.net>
+X-Original-To: example@mailbox4.otherexample.com
+Delivered-To: example@mailbox4.otherexample.com
+Received: from mx9.otherexample.com (mail9.otherexample.com [108.168.242.152])
+	by mailbox4.otherexample.com (Postfix) with ESMTP id CF9B81029149
+	for <example@mailbox4.otherexample.com>; Tue, 24 May 2016 14:45:04 +0000 (UTC)
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by mx9.otherexample.com (Postfix) with ESMTP id C75FC4988009
+	for <example@mailbox4.otherexample.com>; Tue, 24 May 2016 14:45:04 +0000 (UTC)
+X-Spam-Flag: NO
+X-Spam-Score: -5.995
+X-Spam-Level: 
+X-Spam-Status: No, score=-5.995 tagged_above=-999 required=3
+	tests=[RCVD_IN_DNSWL_HI=-5, RP_MATCHES_RCVD=-0.996,
+	URIBL_BLOCKED=0.001]
+Received: from mx9.otherexample.com ([127.0.0.1])
+	by localhost (mail9.otherexample.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id kMNAgEyOHGC3 for <example@mailbox4.otherexample.com>;
+	Tue, 24 May 2016 14:45:04 +0000 (UTC)
+Received: from molamola.anotherdomain.net (molamola.anotherdomain.net [193.0.19.113])
+	by mx9.otherexample.com (Postfix) with ESMTPS id C8F891A38CFB6
+	for <corporate@example.org>; Tue, 24 May 2016 14:45:03 +0000 (UTC)
+Received: from titi.anotherdomain.net ([193.0.23.11])
+	by molamola.anotherdomain.net with esmtps (TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256)
+	(Exim 4.84)
+	(envelope-from <recipient-list-bounces@anotherdomain.net>)
+	id 1b5DZs-000AXw-Uj; Tue, 24 May 2016 16:45:02 +0200
+Received: from chouchou.anotherdomain.net ([193.0.19.37])
+	by titi.anotherdomain.net with esmtps (UNKNOWN:AES256-GCM-SHA384:256)
+	(Exim 4.72)
+	(envelope-from <recipient-list-bounces@anotherdomain.net>)
+	id 1b5DZs-0002rj-Ku; Tue, 24 May 2016 16:45:00 +0200
+Received: from localhost.localdomain ([127.0.0.1] helo=chouchou.anotherdomain.net)
+	by chouchou.anotherdomain.net with esmtp (Exim 4.84)
+	(envelope-from <recipient-list-bounces@anotherdomain.net>)
+	id 1b5DZs-0002e7-GL; Tue, 24 May 2016 16:45:00 +0200
+Received: from nene.anotherdomain.net ([2001:67c:2e8:23::c100:170a])
+ by chouchou.anotherdomain.net with esmtp (Exim 4.84)
+ (envelope-from <sender@anotherdomain.net>) id 1b5DZr-0002e1-8S
+ for recipient-list@lists.anotherdomain.net; Tue, 24 May 2016 16:44:59 +0200
+Received: from sslvpn.anotherdomain.net ([193.0.20.230] helo=vpn-69.anotherdomain.net)
+ by nene.anotherdomain.net with esmtps (TLSv1:AES256-SHA:256) (Exim 4.72)
+ (envelope-from <sender@anotherdomain.net>)
+ id 1b5DZr-0003Kc-0Z; Tue, 24 May 2016 16:44:59 +0200
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+From: Jasper den Hertog <sender@anotherdomain.net>
+In-Reply-To: <3BF2DF82-39A1-49B1-85F3-5E3DBC2728B6@anotherdomain.net>
+Date: Tue, 24 May 2016 16:44:58 +0200
+Message-Id: <C5B43BAC-F388-4D4E-89B0-B5A70F8057AF@anotherdomain.net>
+References: <3BF2DF82-39A1-49B1-85F3-5E3DBC2728B6@anotherdomain.net>
+To: Michela Galante <mgalante@anotherdomain.net>,
+ Vesna Manojlovic <becha@anotherdomain.net>
+X-Mailer: Apple Mail (2.3112)
+Cc: recipient-list@anotherdomain.net
+Subject: Re: [Hackathon-interface] Tell us about your RIPE Atlas Interface
+	Hackathon
+X-BeenThere: recipient-list@anotherdomain.net
+X-Mailman-Version: 2.1.15
+Precedence: list
+List-Id: the RIPE Atlas Interface Hackathon <recipient-list.anotherdomain.net>
+List-Unsubscribe: <https://lists.anotherdomain.net/mailman/options/recipient-list>, 
+ <mailto:recipient-list-request@anotherdomain.net?subject=unsubscribe>
+List-Archive: <https://lists.anotherdomain.net/mailman/private/recipient-list/>
+List-Post: <mailto:recipient-list@anotherdomain.net>
+List-Help: <mailto:recipient-list-request@anotherdomain.net?subject=help>
+List-Subscribe: <https://lists.anotherdomain.net/mailman/listinfo/recipient-list>, 
+ <mailto:recipient-list-request@anotherdomain.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============4925841386386745545=="
+Errors-To: recipient-list-bounces@anotherdomain.net
+Sender: "recipient-list" <recipient-list-bounces@anotherdomain.net>
+X-ACL-Warn: Delaying message
+X-RIPE-Spam-Level: ----------
+X-RIPE-Spam-Report: Spam Total Points:   -10.8 points
+  pts rule name              description
+ ---- ---------------------- ------------------------------------
+ -7.5 ALL_TRUSTED            Passed through trusted hosts only via SMTP
+ -1.4 RP_MATCHES_RCVD        Envelope sender domain matches handover relay domain
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+                             [score: 0.0000]
+X-RIPE-Signature: 74d6e9d2e0fbd38a18dee0d61c350cc4aaef678e8a7aa817f69dbaeed3d52666
+
+
+--===============4925841386386745545==
+Content-Type: multipart/signed; boundary="Apple-Mail=_563BA94A-A566-4BFA-9D83-269DB63D7AC1"; protocol="application/pkcs7-signature"; micalg=sha1
+
+
+--Apple-Mail=_563BA94A-A566-4BFA-9D83-269DB63D7AC1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+Barbara Gordon is a fictional superheroine appearing in American comic books
+published by DC Comics and related media. The character was created by William
+Dozier, Julius Schwartz, and Carmine Infantino. At the request of the producers
+of the 1960s Batman television series, DC editor Schwartz called for a new
+female counterpart to the superhero Batman that could be introduced into
+publication and the third season of the show simultaneously. The character
+subsequently made her first comic book appearance as Batgirl in Detective
+Comics No. 359, titled "The Million Dollar Debut of Batgirl!" (1967), by writer
+Gardner Fox and artist Carmine Infantino.[1] Written as the daughter of Gotham
+City police commissioner James Gordon, her civilian identity is given a
+doctorate in library science and she is employed as head of Gotham City Public
+Library, as well as later being elected to the United States Congress.
+
+In addition to appearing in other DC publications, she receives her first
+starring role in Batman Family which debuted in 1975, partnered with the
+original Robin, Dick Grayson. In 1988, following the editorial retirement of
+the character's Batgirl persona in Barbara Kesel's Batgirl Special No. 1, Alan
+Moore's graphic novel Batman: The Killing Joke depicts the Joker shooting her
+through the spinal cord in her civilian identity, resulting in paraplegia. In
+subsequent stories, editor Kim Yale and writer John Ostrander establish the
+character as a computer expert and information broker known as Oracle.
+Providing intelligence and computer hacking services to assist other
+superheroes, she makes her first appearance as Oracle in Suicide Squad No. 23
+(1989). She is featured in the one-shot comic Black Canary/Oracle: Birds of
+Prey (1996) written by Chuck Dixon, which later became the monthly title Birds
+of Prey starring both characters. The series depicts her as a great intellect
+uninhibited by her paralysis, skilled in the martial art of eskrima. Employing
+Black Canary as her partner and field agent, Oracle later operates as the
+leader of a full team of female crimefighters who engage in global espionage
+missions, under writer Gail Simone. In 2011, following a company wide relaunch
+of all DC Comics titles, the character's mobility is restored and she is given
+a starring role in the eponymous Batgirl monthly comic, as well as Birds of
+Prey, as part of The New 52.
+
+Barbara Gordon is described as one of the most popular characters to appear
+during the Silver Age of Comic Books and is also regarded as a pop icon due to
+her appearances in the Batman television series and continued media exposure.
+She has achieved similar popularity in the Modern Age of Comic Books under the
+Birds of Prey publication and as a disability icon. The character has been the
+subject of academic analysis concerning the roles of women, librarians and
+people living with disabilities in mainstream media. The events of The Killing
+Joke, which led to the character's paralysis, as well as the restoration of her
+mobility, has been a subject of debate among comic book writers, artists,
+editors and readership. Viewpoints range from sexism in comic books, to the
+limited visibility of disabled characters and the practicality of disabled
+characters existing in a fictional universe where magic, technology, and
+medical science exceed the limitations of the real world. Barbara Gordon, as
+both Batgirl and Oracle, has been adapted into various media relating to the
+Batman franchise, including television, film, animation, video games, and other
+merchandise. In 2011, she was ranked 17th in both Comics Buyer's Guide's "100
+Sexiest Women in Comics" and IGN's "Top 100 Comic Books Heroes".[2][3]
+
+--Apple-Mail=_563BA94A-A566-4BFA-9D83-269DB63D7AC1
+Content-Disposition: attachment;
+	filename=smime.p7s
+Content-Type: application/pkcs7-signature;
+	name=smime.p7s
+Content-Transfer-Encoding: base64
+
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIIHBzCCBwMw
+ggXroAMCAQICClFS2H4AAgAABHcwDQYJKoZIhvcNAQEFBQAwYDETMBEGCgmSJomT8ixkARkWA25l
+dDEUMBIGCgmSJomT8ixkARkWBHJpcGUxFjAUBgoJkiaJk/IsZAEZFgZzaW5nZWwxGzAZBgNVBAMT
+EnNpbmdlbC1DSEFLT1RBWS1DQTAeFw0xNTEwMjAxMjE5NDRaFw0xNjEwMTkxMjE5NDRaMIGjMRMw
+EQYKCZImiZPyLGQBGRYDbmV0MRQwEgYKCZImiZPyLGQBGRYEcmlwZTEWMBQGCgmSJomT8ixkARkW
+BnNpbmdlbDERMA8GA1UECxMIYWNjb3VudHMxCzAJBgNVBAsTAlJEMRowGAYDVQQDExFKYXNwZXIg
+ZGVuIEhlcnRvZzEiMCAGCSqGSIb3DQEJARYTamRlbmhlcnRvZ0ByaXBlLm5ldDCCASIwDQYJKoZI
+hvcNAQEBBQADggEPADCCAQoCggEBAK5/isqPxACyr2HXWBDdniZB8FgnvosLtinZuC7O4plutiSH
+HYyubPI15E3qczFE6ycg0CZQtGHM/xPzMNbiVUYPIzA2f7POumn4CiEF/BgS8vHzpTnVmt3XCosO
+uAeMF1pEhE7+UhmPxo6GzU3KHTS+hkkZpGeytpGcy/d2jGGOt8i3j3MZZKiVzq7wyVHUR310kex4
+CGuPTTRQqYWKDte+Vq3umM0N+EX5+IHASJVP241Lu5wF0DVYebZCB/gZhLAqJUpdjYRmoryUZP62
+hwB32vFHZ+gIy41tQ0ccIADPfYyTzP7CM6UVj+KmfzW9fvlX3NZ8V8UVIMR+eviTTykCAwEAAaOC
+A3kwggN1MBcGCSsGAQQBgjcUAgQKHggAVQBzAGUAcjApBgNVHSUEIjAgBgorBgEEAYI3CgMEBggr
+BgEFBQcDBAYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgWgMEQGCSqGSIb3DQEJDwQ3MDUwDgYIKoZI
+hvcNAwICAgCAMA4GCCqGSIb3DQMEAgIAgDAHBgUrDgMCBzAKBggqhkiG9w0DBzAdBgNVHQ4EFgQU
+5EEOwU9//QzM3XDkIQrT9mE9LuwwHwYDVR0jBBgwFoAUcUDZm8Q8qhTSJLIBxWByJ++A64AwggEX
+BgNVHR8EggEOMIIBCjCCAQagggECoIH/hoG9bGRhcDovLy9DTj1zaW5nZWwtQ0hBS09UQVktQ0Es
+Q049UElLRSxDTj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049
+Q29uZmlndXJhdGlvbixEQz1zaW5nZWwsREM9cmlwZSxEQz1uZXQ/Y2VydGlmaWNhdGVSZXZvY2F0
+aW9uTGlzdD9iYXNlP29iamVjdENsYXNzPWNSTERpc3RyaWJ1dGlvblBvaW50hj1odHRwOi8vcGlr
+ZS5zaW5nZWwucmlwZS5uZXQvQ2VydEVucm9sbC9zaW5nZWwtQ0hBS09UQVktQ0EuY3JsMIIBMAYI
+KwYBBQUHAQEEggEiMIIBHjCBuAYIKwYBBQUHMAKGgatsZGFwOi8vL0NOPXNpbmdlbC1DSEFLT1RB
+WS1DQSxDTj1BSUEsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049Q29u
+ZmlndXJhdGlvbixEQz1zaW5nZWwsREM9cmlwZSxEQz1uZXQ/Y0FDZXJ0aWZpY2F0ZT9iYXNlP29i
+amVjdENsYXNzPWNlcnRpZmljYXRpb25BdXRob3JpdHkwYQYIKwYBBQUHMAKGVWh0dHA6Ly9waWtl
+LnNpbmdlbC5yaXBlLm5ldC9DZXJ0RW5yb2xsL1BJS0Uuc2luZ2VsLnJpcGUubmV0X3NpbmdlbC1D
+SEFLT1RBWS1DQSgyKS5jcnQwSgYDVR0RBEMwQaAqBgorBgEEAYI3FAIDoBwMGmpkZW5oZXJ0b2dA
+c2luZ2VsLnJpcGUubmV0gRNqZGVuaGVydG9nQHJpcGUubmV0MA0GCSqGSIb3DQEBBQUAA4IBAQBI
+Jg7aeRhDRGcrYAYofbNx8MSY9bKjb4G0DocGJDOMBp8woX9vQbmXzLSVAuO00xVKFoNDWAKBZ9Iz
+c5p2tUo9etZY/efOsVrlY9opWRTfgWPC0FLszhVIrCxEFb+Co9sFP9jDQQwqkHfAcTR7L87UVGeM
+OJgzS+8fjmtBMB6EduiBDgfhLspQ7lyqmZQLFnoxlP4VRjIh2Kd7E4PyEUPeORn/2is/asPzmcwa
+/k/l6QstHSucekn9wRvxNb3lFha7YtyDwvXKeTg2vsoiHTRzjpcOxsOhrrYIb6zcwfEXIO/XVzGh
+N9BBhIG3lNbY1wAWV+VfR6uwuFeeBgqBjwMhMYIC9jCCAvICAQEwbjBgMRMwEQYKCZImiZPyLGQB
+GRYDbmV0MRQwEgYKCZImiZPyLGQBGRYEcmlwZTEWMBQGCgmSJomT8ixkARkWBnNpbmdlbDEbMBkG
+A1UEAxMSc2luZ2VsLUNIQUtPVEFZLUNBAgpRUth+AAIAAAR3MAkGBSsOAwIaBQCgggFdMBgGCSqG
+SIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE2MDUyNDE0NDQ1OVowIwYJKoZI
+hvcNAQkEMRYEFN4KoJ1IIMDBIqiTF1d4drCxKq4qMH0GCSsGAQQBgjcQBDFwMG4wYDETMBEGCgmS
+JomT8ixkARkWA25ldDEUMBIGCgmSJomT8ixkARkWBHJpcGUxFjAUBgoJkiaJk/IsZAEZFgZzaW5n
+ZWwxGzAZBgNVBAMTEnNpbmdlbC1DSEFLT1RBWS1DQQIKUVLYfgACAAAEdzB/BgsqhkiG9w0BCRAC
+CzFwoG4wYDETMBEGCgmSJomT8ixkARkWA25ldDEUMBIGCgmSJomT8ixkARkWBHJpcGUxFjAUBgoJ
+kiaJk/IsZAEZFgZzaW5nZWwxGzAZBgNVBAMTEnNpbmdlbC1DSEFLT1RBWS1DQQIKUVLYfgACAAAE
+dzANBgkqhkiG9w0BAQEFAASCAQAEiSvsPGOTiVIreOJh26lhwKT9jGZMyY0ZY1muRCfM4euFLAGB
+1Cin29e4Y2HbB91p71WTtH/3uznmIWSdKWaPKufNsFLjNENbBJtdPE6WyHWgtcjkzcXdfQ3FiJzg
+o+p2GJKmZszcgXyjiso0jdQRYoagpk+TmMwecaJinXVCcSz3SeTJ+U1GaWDn3CzTW/AJWGjDn/zB
++5CrsWBS1dAq3vETl+AFBRl35Rccpryq4zMsMlXijyOOQN8CNGgo2lZtuTN8IEAvxXaKty9lFxEY
+xyS3VZZKaWwTklcPpu0Pz02AKZwC3HrNYsLR6HuWys+OV9iqvdXfTLTbuUqvdurHAAAAAAAA
+--Apple-Mail=_563BA94A-A566-4BFA-9D83-269DB63D7AC1--
+
+
+--===============4925841386386745545==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+recipient-list mailing list
+recipient-list@anotherdomain.net
+https://lists.anotherdomain.net/mailman/listinfo/recipient-list
+
+--===============4925841386386745545==--
+
