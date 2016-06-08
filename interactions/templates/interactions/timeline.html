@@ -1,0 +1,53 @@
+{% extends 'barbara/base.html' %}
+
+
+{% comment %}
+
+Much of this is taken from here:
+  https://codyhouse.co/gem/vertical-timeline/
+
+The only thing we're doing differently is that we're loading the contents of
+the timeline from the API.  See main.js for more details.
+
+{% endcomment %}
+
+
+{% load staticfiles %}
+
+
+{% block css %}
+
+  {{ block.super }}
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'contrib/vertical-timeline/css/reset.css' %}" />
+  <link rel="stylesheet" href="{% static 'contrib/vertical-timeline/css/style.css' %}" />
+  <style>
+    .cd-timeline-block img {
+      -webkit-filter: invert(1);
+      filter: invert(1);
+    }
+  </style>
+
+{% endblock css %}
+
+
+{% block js_header %}
+  {{ block.super }}
+  <script src="{% static 'contrib/moment.js' %}"></script>
+  <script src="{% static 'contrib/vertical-timeline/js/modernizr.js' %}"></script>
+{% endblock js_header %}
+
+
+{% block content %}
+	<section id="cd-timeline" class="cd-container">
+    {# Populated by Javascript.  See interactions/js/timeline.js #}
+	</section>
+{% endblock content %}
+
+
+{% block js_footer %}
+  {{ block.super }}
+  <script src="{% static 'contrib/vertical-timeline/js/main.js' %}"></script>
+  <script src="{% static 'interactions/js/timeline.js' %}"></script>
+{% endblock js_footer %}

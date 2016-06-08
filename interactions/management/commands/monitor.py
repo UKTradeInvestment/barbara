@@ -39,27 +39,33 @@ class Command(BaseCommand):
 
         self.logger.debug("Starting polling")
 
-        fetcher = MailFetcher(self.host, self.username, self.password)
-
         while True:
-
-            # Collect the messages
-            messages = list(fetcher.get_messages())
-
-            # Strip out those we already have
-            already_consumed = list(EmailInteraction.objects.filter(
-                hash__in=[m.hash for m in messages]
-            ).values_list("hash", flat=True))
-            messages = [m for m in messages if m.hash not in already_consumed]
-
-            for message in messages:
-                self._process_message(message)
-
-            time.sleep(10)
+            try:
+                self._poll()
+                time.sleep(10)
+            except KeyboardInterrupt:
+                print("\n\n  Goodnight Oracle\n")
+                sys.exit(0)
 
     def _handle_stdin(self):
         self.logger.debug("Starting standard-in handling")
         self._process_message(Message(bytes(sys.stdin.read(), "utf-8")))
+
+    def _poll(self):
+
+        fetcher = MailFetcher(self.host, self.username, self.password)
+
+        # Collect the messages
+        messages = list(fetcher.get_messages())
+
+        # Strip out those we already have
+        already_consumed = list(EmailInteraction.objects.filter(
+            hash__in=[m.hash for m in messages]
+        ).values_list("hash", flat=True))
+        messages = [m for m in messages if m.hash not in already_consumed]
+
+        for message in messages:
+            self._process_message(message)
 
     @staticmethod
     def _process_message(message):

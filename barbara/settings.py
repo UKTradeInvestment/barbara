@@ -41,9 +41,12 @@ INSTALLED_APPS = [
 
     "django_extensions",
 
+    "barbara",
     "contacts.apps.ContactsConfig",
     "interactions.apps.InteractionsConfig",
     "users.apps.UsersConfig",
+
+    "rest_framework",
 
 ]
 

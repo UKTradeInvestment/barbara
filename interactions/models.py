@@ -11,8 +11,38 @@ class Interaction(PolymorphicModel):
     created = models.DateTimeField(auto_now_add=True, editable=False)
     modified = models.DateTimeField(auto_now=True, editable=False)
 
+    class Meta(object):
+        ordering = ("-created",)
+
     def __str__(self):
         return str(self.created)
+
+
+class VoiceAbstractModel(models.Model):
+
+    attendees_string = models.TextField()
+
+    subject = models.CharField(max_length=128)
+    notes = models.TextField()
+
+    class Meta(object):
+        abstract = True
+
+
+class MeetingInteraction(VoiceAbstractModel, Interaction):
+
+    attendees = models.ManyToManyField(Contact, related_name="meetings")
+
+    def __str__(self):
+        return "Meeting with {}".format(self.attendees_string)
+
+
+class PhoneInteraction(VoiceAbstractModel, Interaction):
+
+    attendees = models.ManyToManyField(Contact, related_name="phone_calls")
+
+    def __str__(self):
+        return "Call with {}".format(self.attendees_string)
 
 
 class EmailInteraction(Interaction):

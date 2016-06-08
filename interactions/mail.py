@@ -42,11 +42,11 @@ class Message(Loggable):
         self.recipients = []
 
         message = BytesParser(policy=policy.default).parsebytes(self.raw)
-
+        from email.message import EmailMessage
         self.hash = hashlib.sha512(data).hexdigest()
         self.sender = parseaddr(str(message["From"]))[1].lower()
         self.subject = str(message["Subject"]).replace("\r\n", "")
-        self.body = str(message.get_body())
+        self.body = "\n\n".join(str(message.get_body(preferencelist=('plain', 'related', 'html'))).split("\n\n")[1:])
 
         self._set_recipients(message)
         self._set_time(message)
