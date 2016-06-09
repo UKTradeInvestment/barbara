@@ -42,7 +42,7 @@ class Message(Loggable):
         self.recipients = []
 
         message = BytesParser(policy=policy.default).parsebytes(self.raw)
-        from email.message import EmailMessage
+
         self.hash = hashlib.sha512(data).hexdigest()
         self.sender = parseaddr(str(message["From"]))[1].lower()
         self.subject = str(message["Subject"]).replace("\r\n", "")
