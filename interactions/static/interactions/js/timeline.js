@@ -34,7 +34,7 @@ function timeline_insert(interaction) {
 }
 
 function timeline_fetch() {
-    $.getJSON(Barbara.urls.api.interactions.list + "?ordering=-created", function(data){
+    $.getJSON(Barbara.urls.api.interactions.list + "?ordering=created", function(data){
         for (var i = 0; i < data.results.length; i++){
             var interaction = data.results[i];
             if (accounting.indexOf(interaction.id) == -1) {
