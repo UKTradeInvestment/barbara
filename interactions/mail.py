@@ -2,6 +2,7 @@ import datetime
 import hashlib
 import imaplib
 import logging
+import re
 
 from base64 import b64decode
 from dateutil import parser
@@ -46,7 +47,17 @@ class Message(Loggable):
         self.hash = hashlib.sha512(data).hexdigest()
         self.sender = parseaddr(str(message["From"]))[1].lower()
         self.subject = str(message["Subject"]).replace("\r\n", "")
-        self.body = "\n\n".join(str(message.get_body(preferencelist=('plain', 'related', 'html'))).split("\n\n")[1:])
+
+        # Prefer plain text and strip everything south of the signature. Note
+        # that I'm not sure what will happen here if you send an HTML-only
+        # email.
+        self.body = "\n\n".join(
+            re.sub(r"\r?\n\r?\n-- \r?\n.*", "", str(
+                message.get_body(
+                    preferencelist=('plain', 'related', 'html')
+                )
+            ), flags=re.DOTALL).split("\n\n")[1:]
+        )
 
         self._set_recipients(message)
         self._set_time(message)
