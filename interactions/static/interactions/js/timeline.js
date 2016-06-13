@@ -8,7 +8,6 @@ var accounting = [];
 var shell = $("#cd-timeline");
 
 function timeline_insert(interaction) {
-    console.log("Inserting interaction " + interaction.id);
     var type_map = {
         "phone": "red",
         "meeting": "gold",
@@ -16,10 +15,10 @@ function timeline_insert(interaction) {
     };
     var $moment = $("" +
         '<div class="cd-timeline-block">' +
-            '<div class="cd-timeline-img" style="background-color: ' + Barbara.colours[type_map[interaction.icon]] + '">' +
+            '<div class="cd-timeline-img is-hidden" style="background-color: ' + Barbara.colours[type_map[interaction.icon]] + '">' +
                 '<img src="' + Barbara.urls.static_files + 'contrib/icons/' + interaction.icon + '.svg" alt="' + interaction.icon + '">' +
             '</div>' +
-            '<div class="cd-timeline-content">' +
+            '<div class="cd-timeline-content is-hidden">' +
                 '<h2>' + interaction.subject + '</h2>' +
                 '<p>' + interaction.body_html + '</p>' +
                 '<a href="#" class="cd-read-more">Read more</a>' +
@@ -28,10 +27,13 @@ function timeline_insert(interaction) {
         '</div>' +
     '');
     shell.prepend($moment);
+    $moment
+        .find('.cd-timeline-img, .cd-timeline-content')
+        .removeClass("is-hidden")
+        .addClass("bounce-in");
 }
 
 function timeline_fetch() {
-    console.log("Querying the API");
     $.getJSON(Barbara.urls.api.interactions.list + "?ordering=pk", function(data){
         for (var i = 0; i < data.results.length; i++){
             var interaction = data.results[i];
@@ -40,7 +42,7 @@ function timeline_fetch() {
                 accounting.push(interaction.id);
             }
         }
-        setTimeout(timeline_fetch, 5000);
+        setTimeout(timeline_fetch, 1000);
     });
 }
 
