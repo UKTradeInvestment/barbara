@@ -19,6 +19,58 @@ It's your standard Django project, so:
 
 There's two parts to Barbara: the web server, and the mail monitor.
 
+### Dummy Data
+
+In order to be able to see something, you'll probably want some dummy data in
+the system to start.  The following code snippet will create you two users:
+your test user and your personal account, and then backfill the interaction
+history between you two with four different events:
+
+```python
+from datetime import datetime
+from django.utils import timezone
+from users.models import User
+from contacts.models import UserContact, ExternalContact
+from interactions.models import PhoneInteraction, MeetingInteraction
+
+test = UserContact.objects.create(user=User.objects.create(
+    name="Barbara Gordon", email="test-account@somewhere.ca"))
+me = ExternalContact.objects.create(
+    name="My Name", email="my.name@digital.bis.gov.uk")
+
+p1 = PhoneInteraction.objects.create(
+    subject="Let's talk about comic books!",
+    notes="Barbara Gordon is pretty awesome."
+)
+p1.attendees.add(me, test)
+p1.created = timezone.make_aware(datetime(2016, 6, 8, 14, 22))
+p1.save()
+
+p2 = PhoneInteraction.objects.create(
+    subject="Conference call regarding CORE",
+    notes="Headaches for everyone!"
+)
+p2.attendees.add(me, test)
+p2.created = timezone.make_aware(datetime(2016, 6, 9, 14, 38))
+p2.save()
+
+m1 = MeetingInteraction.objects.create(
+    subject="Lunch Break",
+    notes="Talked about how green the grass was"
+)
+m1.attendees.add(me, test)
+m1.created = timezone.make_aware(datetime(2016, 6, 8, 13, 46))
+m1.save()
+
+m2 = MeetingInteraction.objects.create(
+    subject="Movie Night",
+    notes="Marvel > DC"
+)
+m2.attendees.add(me, test)
+m2.created = timezone.make_aware(datetime(2016, 6, 8, 18, 58))
+m2.save()
+```
+
 ### Web Server
 
 It's your typical Django web server.  Start it with `./manage.py runserver` and
