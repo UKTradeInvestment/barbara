@@ -18,5 +18,5 @@ class InteractionViewSet(ModelViewSet):
     serializer_class = InteractionSerializer
     pagination_class = StandardPagination
     filter_backends = (filters.DjangoFilterBackend, filters.OrderingFilter)
-    ordering_fields = ("pk",)
+    ordering_fields = ("pk", "created")
     http_method_names = ("get",)
